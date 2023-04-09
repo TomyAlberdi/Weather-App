@@ -12,7 +12,7 @@ function App() {
 	return (
 		<div className="App">
 			<header>
-				<Link to={"http://tomas-alberdi.com"} target='_blank'><img src="/favicon.ico" alt="Link a Portfolio" /></Link>
+				<Link to={"http://tomas-alberdi.com"} target='_blank'><img src="/Weather-App/favicon.ico" alt="Link a Portfolio" /></Link>
 			</header>
 			<main>
 				<section className="search">
