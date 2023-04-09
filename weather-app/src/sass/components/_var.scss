@@ -1,0 +1,9 @@
+$white: rgb(255, 252, 255);
+$black: #252525;
+
+@mixin flex-container ($direction, $space, $items) {
+    display: flex;
+    align-items: $items;
+    flex-direction: $direction;
+    justify-content: $space;    
+}
