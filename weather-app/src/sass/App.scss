@@ -1,4 +1,5 @@
 @use "./components/var";
+@use "./components/weather";
 
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200;300;400;500;700&display=swap');
 
@@ -15,5 +16,92 @@ html {
     body {
         overscroll-behavior-y: none;
         overscroll-behavior-x: none;
+        div.App {
+            height: 100vh;
+            background-image: var.$rainy;
+            header {
+                @include var.flex-container(row,flex-end,center);
+                background-color: rgba(0, 0, 0, 0.2);
+                height: 10vh;
+                a {
+                    height: 100%;
+                    img {
+                        height: inherit;
+                        width: 10vh;
+                        padding: 1vh;
+                        transition: 0.2s all linear;
+                        &:hover {
+                            background-color: rgba(0, 0, 0, 0.2);
+                            transition: 0.2s all linear;
+                        }
+                    }
+                }
+            }
+            main {
+                @include var.flex-container(column,center,center);
+                height: 90%;
+                gap: 1%;
+                section {
+                    width: 60%;
+                    padding: 1vh;
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 10px;
+                    &.search {
+                        @include var.flex-container(row,center,center);
+                        height: 7%;
+                        gap: 1vh;
+                        input, button {
+                            height: 100%;
+                            border-radius: 10px;
+                            border: none;
+                            font-size: 1.2rem;
+                            background-color: var.$white;
+                        }
+                        input {
+                            padding: 0 1%;
+                            width: 90%;
+                            font-weight: 300;
+                            &:focus {
+                                outline: none;
+                            }
+                        }
+                        button {
+                            width: 10%;
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    html {
+        body {
+            div.App {
+                main {
+                    section {
+                        width: 90%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    html {
+        body {
+            div.App {
+                main {
+                    section {
+                        width: 70%;
+                    }
+                }
+            }
+        }
     }
 }

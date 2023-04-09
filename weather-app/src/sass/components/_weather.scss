@@ -1,0 +1,19 @@
+@use "./var";
+
+section.Weather {
+    height: 70%;
+}
+
+/* Query Mobile */
+@media screen and (max-width: 765px) {
+    section.Weather {
+        height: 80%;
+    }
+}
+
+/* Query Tablet */
+@media screen and (min-width: 766px) and (max-width: 1023px) {
+    section.Weather {
+        height: 70%;
+    }
+}
