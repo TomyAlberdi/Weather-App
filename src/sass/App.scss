@@ -19,6 +19,7 @@ html {
         div.App {
             height: 100vh;
             background-image: var.$rainy;
+            overflow: hidden;
             header {
                 @include var.flex-container(row,flex-end,center);
                 background-color: rgba(0, 0, 0, 0.2);
@@ -81,6 +82,7 @@ html {
     html {
         body {
             div.App {
+                height: 100dvh;
                 main {
                     section {
                         width: 90%;
@@ -96,6 +98,7 @@ html {
     html {
         body {
             div.App {
+                height: 100dvh;
                 main {
                     section {
                         width: 70%;

@@ -7,6 +7,7 @@ import Weather from './components/Weather'
 // https://www.weatherapi.com/docs/
 // https://www.weatherapi.com/docs/weather_conditions.json
 // https://dribbble.com/shots/21084146-Weather-app
+// https://mui.com/material-ui/react-skeleton/
 
 function App() {
 	return (
