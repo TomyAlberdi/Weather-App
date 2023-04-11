@@ -1,38 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Skeleton from '@mui/material/Skeleton';
-import Swal from 'sweetalert2'
 import 'sweetalert2/src/sweetalert2.scss'
-import axios from 'axios'
 
-const Weather = ({LoadingData,setLoadingData,City}) => {
-
-    const [Data, setData] = useState()
-    useEffect(() => {
-        const aux = {
-            method: "GET",
-            url: `https://weatherapi-com.p.rapidapi.com/current.json`,
-            params: {
-                q: City
-            },
-            headers: {
-                'X-RapidAPI-Key': '24cd8d7c43mshe6c7b8423ae4f79p137301jsn8b17bf42ce88',
-                'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com'
-            }
-        }
-        axios.request(aux)
-        .then(res => {
-            setData(res.data)
-            setLoadingData(false)
-        })
-        .catch(error => {
-            Swal.fire({
-                icon: 'error',
-                title: 'Weather not available',
-                text: `Error: ${error.response.data.error.message}`,
-                confirmButtonColor: "#EB455F",
-            })
-        })
-    }, [LoadingData, City])
+const Weather = ({LoadingData,Data}) => {
     
     if (LoadingData) {
         return (
@@ -44,7 +14,9 @@ const Weather = ({LoadingData,setLoadingData,City}) => {
         return (
             <section className="Weather">
                 <article className="name div1">
-                    {Data.location.name}, {Data.location.country}
+                    <h3>Weather in</h3>
+                    <h1>{Data.location.name}, {Data.location.country}</h1>
+                    <h3>At {Data.location.localtime.substring(11,16)}</h3>
                 </article>
             </section>
         )

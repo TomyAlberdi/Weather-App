@@ -4,9 +4,10 @@ section.Weather {
     height: 70%;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(6, 1fr); 
+    grid-template-rows: repeat(7, 1fr); 
     article {
-        &.div1 { grid-area: 1 / 1 / 2 / 7; }
+        border: 1px solid red;
+        &.div1 { grid-area: 1 / 1 / 3 / 7; }
     }
 }
 
