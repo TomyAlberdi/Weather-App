@@ -21,7 +21,7 @@ const Weather = ({LoadingData,Data}) => {
                 <article className="icon div2">
                     <h3>{Data.current.condition.text}</h3>
                     <img src={
-                        Data.current.condition.icon.substring(28)
+                        "/Weather-App" + Data.current.condition.icon.substring(28)
                     } />
                 </article>
                 <article className="temp div3">
