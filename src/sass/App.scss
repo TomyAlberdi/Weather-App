@@ -22,13 +22,13 @@ html {
             overflow: hidden;
             &.daytime {
                 background-image: var.$light;
-                h1,h2,h3,span {
+                h1,h2,h3,span,i {
                     color: var.$black;
                 }
             }
             &.nighttime {
                 background-image: var.$dark;
-                h1,h2,h3,span {
+                h1,h2,h3,span,i {
                     color: var.$white;
                 }
             }
@@ -55,7 +55,7 @@ html {
                 height: 90%;
                 gap: 1%;
                 section {
-                    width: 60%;
+                    width: 40%;
                     padding: 1vh;
                     background-color: rgba(0, 0, 0, 0.2);
                     border-radius: 10px;
@@ -81,6 +81,9 @@ html {
                         button {
                             width: 10%;
                             cursor: pointer;
+                            i {
+                                color: var.$black;
+                            }
                         }
                     }
                 }

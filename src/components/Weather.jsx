@@ -1,6 +1,7 @@
 import React from 'react'
 import Skeleton from '@mui/material/Skeleton';
 import 'sweetalert2/src/sweetalert2.scss'
+import icons from './utils/icons.json'
 
 const Weather = ({LoadingData,Data}) => {
     
@@ -19,10 +20,12 @@ const Weather = ({LoadingData,Data}) => {
                     <h3>At {Data.location.localtime.substring(11,16)}</h3>
                 </article>
                 <article className="div2">
-                    <h3>{Data.current.condition.text}</h3>
-                    <img src={
-                        "/Weather-App" + Data.current.condition.icon.substring(28)
-                    } />
+                    <div className='textDiv'>
+                        <h3>{Data.current.condition.text}</h3>
+                    </div>
+                    <div className="imgDiv">
+                        <i className={icons[Data.current.is_day].iconList[Data.current.condition.code]}></i>
+                    </div>
                 </article>
                 <article className="div3">
                     <h2>{Data.current.temp_c} <span>C</span></h2>
