@@ -22,6 +22,7 @@ const Weather = ({LoadingData,setLoadingData,City}) => {
         axios.request(aux)
         .then(res => {
             setData(res.data)
+            setLoadingData(false)
         })
         .catch(error => {
             Swal.fire({
@@ -31,7 +32,6 @@ const Weather = ({LoadingData,setLoadingData,City}) => {
                 confirmButtonColor: "#EB455F",
             })
         })
-        setLoadingData(false)
     }, [LoadingData, City])
     
     if (LoadingData) {
@@ -43,7 +43,9 @@ const Weather = ({LoadingData,setLoadingData,City}) => {
     } else {
         return (
             <section className="Weather">
-                <h1>test</h1>
+                <article className="name div1">
+                    {Data.location.name}, {Data.location.country}
+                </article>
             </section>
         )
     }

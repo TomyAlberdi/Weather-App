@@ -15,6 +15,10 @@ function App() {
     const [LoadingData, setLoadingData] = useState(true)
 	const [City, setCity] = useState("La Plata")
 
+	const handleKeyPress = (e) => {
+		e.key === "Enter" ? handleInput() : null
+	}
+
 	const handleInput = () => {
 		const input = document.querySelector("#city")
 		setCity(input.value)
@@ -28,7 +32,7 @@ function App() {
 			</header>
 			<main>
 				<section className="search">
-					<input type="text" name="city" id="city" placeholder="Search city" />
+					<input type="text" name="city" id="city" placeholder="Search city" onKeyDown={handleKeyPress} />
 					<button onClick={handleInput}><i className="fa-solid fa-magnifying-glass"></i></button>
 				</section>
 				<Weather LoadingData={LoadingData} setLoadingData={setLoadingData} City={City} setCity={setCity} />
