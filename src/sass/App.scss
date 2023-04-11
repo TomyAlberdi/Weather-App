@@ -19,7 +19,6 @@ html {
         div.App {
             height: 100vh;
             overflow: hidden;
-            transition: all 0.3s ease-in-out;
             &.daytime {
                 background-image: var.$light;
                 h1,h2,h3,span {
@@ -71,7 +70,7 @@ html {
                             background-color: var.$white;
                         }
                         input {
-                            padding: 0 1%;
+                            padding: 0 2vh;
                             width: 90%;
                             font-weight: 300;
                             &:focus {
@@ -97,6 +96,15 @@ html {
                 height: 100dvh;
                 main {
                     section {
+                        &.search {
+                            height: 9%;
+                            input {
+                                width: 85%;
+                            }
+                            button {
+                                width: 15%;
+                            }
+                        }
                         width: 90%;
                     }
                 }
