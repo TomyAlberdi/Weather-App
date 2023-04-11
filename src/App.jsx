@@ -50,7 +50,14 @@ function App() {
 	}
 	
 	return (
-		<div className="App">
+		<div 
+            className={"App " + 
+                (Data?.current.is_day === 1 ?
+                    "daytime"
+                :
+                    "nighttime")
+            } 
+        >
 			<header>
 				<Link to={"http://tomas-alberdi.com"} target='_blank'><img src="/Weather-App/favicon.ico" alt="Link a Portfolio" /></Link>
 			</header>

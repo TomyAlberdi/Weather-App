@@ -18,8 +18,20 @@ html {
         overscroll-behavior-x: none;
         div.App {
             height: 100vh;
-            background-image: var.$rainy;
             overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            &.daytime {
+                background-image: var.$light;
+                h1,h2,h3,span {
+                    color: var.$black;
+                }
+            }
+            &.nighttime {
+                background-image: var.$dark;
+                h1,h2,h3,span {
+                    color: var.$white;
+                }
+            }
             header {
                 @include var.flex-container(row,flex-end,center);
                 background-color: rgba(0, 0, 0, 0.2);

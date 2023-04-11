@@ -13,28 +13,28 @@ const Weather = ({LoadingData,Data}) => {
     } else {
         return (
             <section className="Weather">
-                <article className="name div1">
+                <article className="div1">
                     <h3>Weather in</h3>
                     <h1>{Data.location.name}, {Data.location.country}</h1>
                     <h3>At {Data.location.localtime.substring(11,16)}</h3>
                 </article>
-                <article className="icon div2">
+                <article className="div2">
                     <h3>{Data.current.condition.text}</h3>
                     <img src={
                         "/Weather-App" + Data.current.condition.icon.substring(28)
                     } />
                 </article>
-                <article className="temp div3">
+                <article className="div3">
                     <h2>{Data.current.temp_c} <span>C</span></h2>
                 </article>
-                <article className="wind div4">
+                <article className="div4">
                     <i className="fa-solid fa-wind"></i>
                     <h3>{Data.current.wind_kph} <span>km/h</span></h3>
                 </article>
-                <article className="humid div5">
+                <article className="div5">
                     <h2>himidity</h2>
                 </article>
-                <article className="uv div6">
+                <article className="div6">
                     <h2>uv rays</h2>
                 </article>
             </section>
