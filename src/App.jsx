@@ -1,6 +1,7 @@
 import './sass/App.scss'
 import { Link } from 'react-router-dom'
 import Weather from './components/Weather'
+import { useState } from 'react'
 
 // Links:
 // https://rapidapi.com/weatherapi/api/weatherapi-com/
@@ -10,6 +11,16 @@ import Weather from './components/Weather'
 // https://mui.com/material-ui/react-skeleton/
 
 function App() {
+
+    const [LoadingData, setLoadingData] = useState(true)
+	const [City, setCity] = useState("La Plata")
+
+	const handleInput = () => {
+		const input = document.querySelector("#city")
+		setCity(input.value)
+		input.value = ""
+	}
+	
 	return (
 		<div className="App">
 			<header>
@@ -17,10 +28,10 @@ function App() {
 			</header>
 			<main>
 				<section className="search">
-					<input type="text" name="city" id="city" placeholder='Search a city' />
-					<button><i className="fa-solid fa-magnifying-glass"></i></button>
+					<input type="text" name="city" id="city" placeholder="Search city" />
+					<button onClick={handleInput}><i className="fa-solid fa-magnifying-glass"></i></button>
 				</section>
-				<Weather />
+				<Weather LoadingData={LoadingData} setLoadingData={setLoadingData} City={City} setCity={setCity} />
 			</main>
 		</div>
 	)
