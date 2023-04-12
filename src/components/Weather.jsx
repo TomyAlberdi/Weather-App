@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Skeleton from '@mui/material/Skeleton';
 import 'sweetalert2/src/sweetalert2.scss'
 import icons from './utils/icons.json'
+import Switch from '@mui/material/Switch';
+import { pink } from '@mui/material/colors';
 
 const Weather = ({LoadingData,Data}) => {
+
+    const [Celsius, setCelsius] = useState(true)
+    const [Kmh, setKmh] = useState(true)
     
     if (LoadingData) {
         return (
@@ -28,17 +33,34 @@ const Weather = ({LoadingData,Data}) => {
                     </div>
                 </article>
                 <article className="div3">
-                    <h2>{Data.current.temp_c} <span>C</span></h2>
+                    <div className='textDiv'>
+                        <h2>{Celsius ? Data.current.temp_c : Data.current.temp_f}</h2>
+                        <span>{Celsius ? "°C" : "°F"}</span>
+                    </div>
+                    <div className="buttonDiv">
+                        <span>F</span>
+                        <Switch checked={Celsius} onChange={() => setCelsius(!Celsius)} color="success" /> 
+                        <span>C</span>
+                    </div>
                 </article>
                 <article className="div4">
-                    <i className="fa-solid fa-wind"></i>
-                    <h3>{Data.current.wind_kph} <span>km/h</span></h3>
+                    <div className="dataDiv">
+                        <i className="fa-solid fa-wind"></i>
+                        <h3>{Kmh ? Data.current.wind_kph : Data.current.wind_mph} <span>{Kmh ? "km/h" : "mi/h"}</span></h3>
+                    </div>
+                    <div className="buttonDiv">
+                        <span>M</span>
+                        <Switch checked={Kmh} onChange={() => setKmh(!Kmh)} color="success" /> 
+                        <span>Km</span>
+                    </div>
                 </article>
                 <article className="div5">
-                    <h2>himidity</h2>
+                    <i className="fa-solid fa-droplet-percent"></i>
+                    <h3>{Data.current.humidity}</h3>
                 </article>
                 <article className="div6">
-                    <h2>uv rays</h2>
+                    <i className="fa-solid fa-sun-bright"></i>
+                    <h3>{Data.current.uv}</h3>
                 </article>
             </section>
         )
