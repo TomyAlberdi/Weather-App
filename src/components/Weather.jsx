@@ -13,7 +13,12 @@ const Weather = ({LoadingData,Data}) => {
     if (LoadingData) {
         return (
             <section className="Weather">
-                <Skeleton variant='rectangular' />
+                <Skeleton variant='rectangular' className='div1' />
+                <Skeleton variant='rectangular' className='div2' />
+                <Skeleton variant='rectangular' className='div3' />
+                <Skeleton variant='rectangular' className='div4' />
+                <Skeleton variant='rectangular' className='div5' />
+                <Skeleton variant='rectangular' className='div6' />
             </section>
         )
     } else {
