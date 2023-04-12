@@ -20,17 +20,15 @@ html {
         div.App {
             height: 100vh;
             overflow: hidden;
+            background-image: var.$cloudy;
+            h1,h2,h3,span,i {
+                color: var.$white;
+            }
             &.daytime {
                 background-image: var.$light;
-                h1,h2,h3,span,i {
-                    color: var.$white;
-                }
             }
             &.nighttime {
                 background-image: var.$dark;
-                h1,h2,h3,span,i {
-                    color: var.$white;
-                }
             }
             header {
                 @include var.flex-container(row,flex-end,center);

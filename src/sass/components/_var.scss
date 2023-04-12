@@ -4,6 +4,7 @@ $acc: #EB455F;
 
 $dark: linear-gradient(#0f0c29, #302b63, #24243e);
 $light: linear-gradient(#8d7f53, #F39F86);
+$cloudy: linear-gradient(#7c8585, #6c8a89);
 
 @mixin flex-container ($direction, $space, $items) {
     display: flex;
