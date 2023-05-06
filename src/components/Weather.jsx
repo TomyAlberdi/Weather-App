@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
 import Skeleton from '@mui/material/Skeleton';
 import 'sweetalert2/src/sweetalert2.scss'
-import icons from './utils/icons.json'
 import Switch from '@mui/material/Switch';
-import { pink } from '@mui/material/colors';
 
 const Weather = ({LoadingData,Data}) => {
 
@@ -33,9 +31,6 @@ const Weather = ({LoadingData,Data}) => {
                     <div className='textDiv'>
                         <h3>{Data.current.condition.text}</h3>
                     </div>
-                    <div className="imgDiv">
-                        <i className={icons[Data.current.is_day].iconList[Data.current.condition.code]}></i>
-                    </div>
                 </article>
                 <article className="div3">
                     <div className='textDiv'>
@@ -60,11 +55,11 @@ const Weather = ({LoadingData,Data}) => {
                     </div>
                 </article>
                 <article className="div5">
-                    <i className="fa-solid fa-droplet-percent"></i>
+                    <i className="fa-solid fa-droplet"></i>
                     <h3>{Data.current.humidity}</h3>
                 </article>
                 <article className="div6">
-                    <i className="fa-solid fa-sun-bright"></i>
+                    <i className="fa-solid fa-sun"></i>
                     <h3>{Data.current.uv}</h3>
                 </article>
             </section>

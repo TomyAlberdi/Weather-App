@@ -32,19 +32,10 @@ section.Weather {
                 height: 100%;
                 @include var.flex-container(row,center,center);
                 &.textDiv {
-                    width: 60%;
+                    width: 100%;
                     h3 {
                         font-size: 1.8rem;
                         text-align: center;
-                    }
-                }
-                &.imgDiv {
-                    width: 40%;
-                    img {
-                        width: 80%;
-                    }
-                    i {
-                        font-size: 3rem;
                     }
                 }
             }
